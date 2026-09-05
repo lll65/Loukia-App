@@ -2,7 +2,11 @@ name: Déploiement GitHub Pages
 
 on:
   push:
-    branches: [main, master]
+    branches:
+      - main
+      - master
+      # branche par défaut actuelle du dépôt
+      - claude/app-pour-soeur-3sz8rc
   workflow_dispatch:
 
 permissions:

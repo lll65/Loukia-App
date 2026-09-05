@@ -90,8 +90,13 @@ dans `src/content/index.ts`.
 
 Le build utilise des chemins relatifs : `dist/` peut être servi depuis n'importe quel
 hébergeur statique ou sous-dossier. Un workflow GitHub Actions publie automatiquement
-sur GitHub Pages à chaque push sur la branche par défaut (à activer dans
-*Settings → Pages → Source : GitHub Actions*).
+sur GitHub Pages à chaque push sur la branche par défaut — à activer dans
+*Settings → Pages → Source : GitHub Actions*.
+
+À savoir : GitHub Pages sur un dépôt **privé** demande un abonnement payant. Pour un
+dépôt privé sans abonnement, deux options équivalentes et gratuites : rendre le dépôt
+public, ou déposer le contenu de `dist/` sur Netlify, Vercel ou Cloudflare Pages
+(glisser-déposer du dossier, aucune configuration nécessaire).
 
 ## Installer sur le téléphone
 
