@@ -1,0 +1,204 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/* ------------------------------------------------------------------ */
+/* Thème : les variables « app-* » basculent en mode sombre,           */
+/* les tokens Tailwind pointent dessus via @theme inline.              */
+/* ------------------------------------------------------------------ */
+:root {
+  --app-bg: #f5f4fb;
+  --app-surface: #ffffff;
+  --app-surface-2: #faf9ff;
+  --app-ink: #1d1c2b;
+  --app-ink-soft: #52516b;
+  --app-muted: #8a89a3;
+  --app-line: #eceaf6;
+  --app-line-strong: #ddd9ee;
+  --app-primary: #7c5cfc;
+  --app-primary-ink: #5b3ee0;
+  --app-primary-soft: #efeafe;
+  --app-accent: #ec4899;
+  --app-accent-soft: #fde7f3;
+  --app-shadow: 0 1px 2px rgb(29 28 43 / 0.04), 0 8px 24px -12px rgb(29 28 43 / 0.14);
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --app-bg: #121120;
+  --app-surface: #1b1a2b;
+  --app-surface-2: #211f34;
+  --app-ink: #f2f1f9;
+  --app-ink-soft: #c3c1d8;
+  --app-muted: #8e8ca8;
+  --app-line: #2c2a42;
+  --app-line-strong: #3a3754;
+  --app-primary: #9d84ff;
+  --app-primary-ink: #c3b2ff;
+  --app-primary-soft: #2a2545;
+  --app-accent: #f472b6;
+  --app-accent-soft: #3d2338;
+  --app-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--app-bg);
+  --color-surface: var(--app-surface);
+  --color-surface-2: var(--app-surface-2);
+  --color-ink: var(--app-ink);
+  --color-ink-soft: var(--app-ink-soft);
+  --color-muted: var(--app-muted);
+  --color-line: var(--app-line);
+  --color-line-strong: var(--app-line-strong);
+  --color-primary: var(--app-primary);
+  --color-primary-ink: var(--app-primary-ink);
+  --color-primary-soft: var(--app-primary-soft);
+  --color-accent: var(--app-accent);
+  --color-accent-soft: var(--app-accent-soft);
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --radius-card: 1.125rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Couleurs par matière                                                */
+/* ------------------------------------------------------------------ */
+[data-tone='violet']  { --tone: #7c5cfc; --tone-fg: #5b3ee0; --tone-bg: #eee9fe; }
+[data-tone='rose']    { --tone: #f43f5e; --tone-fg: #be123c; --tone-bg: #ffe9ee; }
+[data-tone='amber']   { --tone: #f59e0b; --tone-fg: #b45309; --tone-bg: #fef1dc; }
+[data-tone='emerald'] { --tone: #10b981; --tone-fg: #047857; --tone-bg: #dcfaef; }
+[data-tone='sky']     { --tone: #0ea5e9; --tone-fg: #0369a1; --tone-bg: #e0f3fe; }
+[data-tone='teal']    { --tone: #14b8a6; --tone-fg: #0f766e; --tone-bg: #d8f6f2; }
+[data-tone='yellow']  { --tone: #eab308; --tone-fg: #a16207; --tone-bg: #fdf4d3; }
+[data-tone='slate']   { --tone: #64748b; --tone-fg: #475569; --tone-bg: #eaeef4; }
+[data-tone='pink']    { --tone: #ec4899; --tone-fg: #be1e6d; --tone-bg: #fde7f3; }
+[data-tone='indigo']  { --tone: #6366f1; --tone-fg: #4338ca; --tone-bg: #e6e7fe; }
+[data-tone='lime']    { --tone: #84cc16; --tone-fg: #4d7c0f; --tone-bg: #eefbd4; }
+[data-tone='orange']  { --tone: #f97316; --tone-fg: #c2410c; --tone-bg: #ffedd9; }
+
+[data-theme='dark'] [data-tone='violet']  { --tone: #a78bfa; --tone-fg: #c4b5fd; --tone-bg: #2b2547; }
+[data-theme='dark'] [data-tone='rose']    { --tone: #fb7185; --tone-fg: #fda4af; --tone-bg: #3d2029; }
+[data-theme='dark'] [data-tone='amber']   { --tone: #fbbf24; --tone-fg: #fcd34d; --tone-bg: #3a2c15; }
+[data-theme='dark'] [data-tone='emerald'] { --tone: #34d399; --tone-fg: #6ee7b7; --tone-bg: #13332a; }
+[data-theme='dark'] [data-tone='sky']     { --tone: #38bdf8; --tone-fg: #7dd3fc; --tone-bg: #142c3d; }
+[data-theme='dark'] [data-tone='teal']    { --tone: #2dd4bf; --tone-fg: #5eead4; --tone-bg: #123331; }
+[data-theme='dark'] [data-tone='yellow']  { --tone: #facc15; --tone-fg: #fde047; --tone-bg: #38300f; }
+[data-theme='dark'] [data-tone='slate']   { --tone: #94a3b8; --tone-fg: #cbd5e1; --tone-bg: #262b38; }
+[data-theme='dark'] [data-tone='pink']    { --tone: #f472b6; --tone-fg: #f9a8d4; --tone-bg: #3c1f31; }
+[data-theme='dark'] [data-tone='indigo']  { --tone: #818cf8; --tone-fg: #a5b4fc; --tone-bg: #22244a; }
+[data-theme='dark'] [data-tone='lime']    { --tone: #a3e635; --tone-fg: #bef264; --tone-bg: #24330f; }
+[data-theme='dark'] [data-tone='orange']  { --tone: #fb923c; --tone-fg: #fdba74; --tone-bg: #3b2413; }
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* Ces règles vivent dans @layer base : sans cela, du CSS hors couche  */
+/* l'emporterait sur les utilitaires Tailwind (qui, eux, sont dans une */
+/* couche) et écraserait par exemple les tailles de police des boutons.*/
+/* ------------------------------------------------------------------ */
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--app-bg);
+    color: var(--app-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+
+  button {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  ::selection {
+    background: var(--app-primary-soft);
+    color: var(--app-primary-ink);
+  }
+}
+
+/* Barres de défilement discrètes */
+.scroll-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: var(--app-line-strong);
+  border-radius: 999px;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@utility card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-line);
+  border-radius: var(--radius-card);
+  box-shadow: var(--app-shadow);
+}
+
+@utility field {
+  width: 100%;
+  background: var(--app-surface-2);
+  border: 1px solid var(--app-line-strong);
+  border-radius: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.field:focus {
+  border-color: var(--app-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--app-primary) 18%, transparent);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-rise {
+  animation: rise 0.28s ease-out both;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.9); opacity: 0; }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-pop {
+  animation: pop 0.22s ease-out both;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
