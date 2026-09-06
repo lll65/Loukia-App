@@ -1,5 +1,7 @@
 # Mon appli de révision
 
+**👉 [Ouvrir l'application](https://lll65.github.io/Loukia-App/)**
+
 Application de révision personnelle pour le collège (programme de 3ᵉ) : cours, fiches,
 vidéos, quiz, exercices corrigés, notes, emploi du temps, programme de travail
 personnalisé, statistiques et mode concentration.
@@ -93,10 +95,13 @@ hébergeur statique ou sous-dossier. Un workflow GitHub Actions publie automatiq
 sur GitHub Pages à chaque push sur la branche par défaut — à activer dans
 *Settings → Pages → Source : GitHub Actions*.
 
-À savoir : GitHub Pages sur un dépôt **privé** demande un abonnement payant. Pour un
-dépôt privé sans abonnement, deux options équivalentes et gratuites : rendre le dépôt
-public, ou déposer le contenu de `dist/` sur Netlify, Vercel ou Cloudflare Pages
-(glisser-déposer du dossier, aucune configuration nécessaire).
+L'application est en ligne à l'adresse **https://lll65.github.io/Loukia-App/** et se met
+à jour toute seule à chaque push.
+
+À savoir : GitHub Pages est gratuit sur un dépôt public, mais demande un abonnement payant
+sur un dépôt privé. Si le dépôt repasse en privé sans abonnement, il suffit de déposer le
+contenu de `dist/` sur Netlify ou Cloudflare Pages (glisser-déposer du dossier, aucune
+configuration nécessaire).
 
 ## Installer sur le téléphone
 
